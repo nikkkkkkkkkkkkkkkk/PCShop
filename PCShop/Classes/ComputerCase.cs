@@ -11,21 +11,19 @@ namespace PCShop.Classes
     public class ComputerCase
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; } = "";
         public int Price { get; set; }
         public int Count { get; set; }
-        [Key]
-        public FormFactor FormFactor { get; set; }
+        public FormFactor FormFactor { get; set; } = new FormFactor();
         public int Size { get; set; }
         public int Height { get; set; }
-        [Key]
-        public Manufacturer Manufacturer { get; set; }
+        public Manufacturer Manufacturer { get; set; } = new Manufacturer();
 
         public ComputerCase(string name, int price, int count, int size, int height)
         {
-            Name = name; 
+            Name = name;
             Price = price;
-            Count = count; 
+            Count = count;
             Size = size;
             Height = height;
         }
