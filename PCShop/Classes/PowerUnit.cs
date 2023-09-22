@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace PCShop.Classes
 {
-    public class PowerUnit
+    public class PowerUnit : IBase
     {
         public int Id { get; set; }
         public string Name { get; set; } = "";
         public int Price { get; set; }
         public int Count { get; set; }
+        public byte[]? Image { get; set; }
         public int Watts {  get; set; }
         public Manufacturer Manufacturer { get; set; } = new Manufacturer();
     }

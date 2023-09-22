@@ -8,8 +8,42 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\ComputerCase.png" />
+    <None Remove="Resources\CPU.png" />
+    <None Remove="Resources\GPU.png" />
+    <None Remove="Resources\Motherboard.png" />
+    <None Remove="Resources\PowerUnit.png" />
+    <None Remove="Resources\RAM.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\ComputerCase.png" />
+    <Resource Include="Resources\CPU.png" />
+    <Resource Include="Resources\GPU.png" />
+    <Resource Include="Resources\Motherboard.png" />
+    <Resource Include="Resources\PowerUnit.png" />
+    <Resource Include="Resources\RAM.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

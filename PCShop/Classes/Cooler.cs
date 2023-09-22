@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace PCShop.Classes
 {
-    public class Cooler
+    public class Cooler : IBase
     {
         public int Id { get; set; }
         public string Name { get; set; } = "";
         public int Price { get; set; }
         public int Count { get; set; }
+        public byte[]? Image { get; set; }
         public string Type { get; set; } = "";
         public SocketType SocketType { get; set; } = new SocketType();
         public int Watts { get; set; }

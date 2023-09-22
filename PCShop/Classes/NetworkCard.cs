@@ -9,8 +9,7 @@ namespace PCShop.Classes
     public class NetworkCard
     {
         public int Id {  get; set; }
-        public string Name { get; set; } = "";
-        public float speed { get; set; }
+        public double Speed { get; set; }
         public string WiFi { get; set; } = "";
         public string Bluetooth { get; set; } = "";
     }
