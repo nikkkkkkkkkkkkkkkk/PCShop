@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Win32;
 using PCShop.Classes;
+using PCShop.Interfaces;
 using PCShop.Modules;
 using System;
 using System.Collections.Generic;
@@ -32,69 +33,9 @@ namespace PCShop
             InitializeComponent();
             mainWindow = this;
             frame = privateFrame;
-            //MessageBox.Show(db.Users.Local.FirstOrDefault().GetRights());
-            //List<IBase> bases = new List<IBase>
-            //{
-            //    new ComputerCase()
-            //    {
-            //        Name = "Корпус",
-            //        Price = 2150,
-            //        Count = 100,
-            //        FormFactor = new FormFactor()
-            //        {
-            //            Name = "Mini-ATX"
-            //        },
-            //        Size = 50,
-            //        Height =50,
-            //        Manufacturer = new Manufacturer()
-            //        {
-            //            Name = "DEXP",
-            //            Description = "Компания DEXP"
-            //        },
-            //    },
-            //    new Motherboard()
-            //    {
-            //        Name = "Материнская плата",
-            //        Price = 8650,
-            //        Count = 100,
-            //        SocketType = new SocketType()
-            //        {
-            //            Name = "AM4"
-            //        },
-            //        Chipset = new Chipset()
-            //        {
-            //            Name = "AMD B550"
-            //        },
-            //        VideoOutput = new VideoOutput() {
-            //            Name = "DisplayPort"
-            //        },
-            //        RAMType = "DDR4",
-            //        RAMMaxFreq = 3600,
-            //        RAMSlots = 4,
-            //        PCI = 2,
-            //        PCIExpress = 2,
-            //        SATA = 4,
-            //        USB = 6,
-            //        NetworkCard = new NetworkCard()
-            //        {
-            //            Speed = 2.5,
-            //            WiFi = "Intel AC 3168",
-            //            Bluetooth = "Bluetooth 4.2",
-            //        },
-            //        SoundCard = 7.1,
-            //        FormFactor = new FormFactor()
-            //        {
-            //            Name = "Micro-ATX",
-            //        },
-            //        Manufacturer = new Manufacturer()
-            //        {
-            //            Name = "DEXP",
-            //            Description = "Компания DEXP"
-            //        }
 
-            //    }
-            //};
             DB.Load();
+
             frame.Navigate(new PagesClasses.AuthPage());
         }
 

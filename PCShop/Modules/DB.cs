@@ -33,6 +33,16 @@ namespace PCShop.Modules
             db.Users.Load();
             db.VideoOutputs.Load();
             db.ShoppingCart.Load();
+            db.Chipsets.Load();
+            db.RAMTypes.Load();
+        }
+        public static void LoadMotherboards()
+        {
+            db.Motherboards.Load();
+        }
+        public static void Save() 
+        {
+            db.SaveChanges();
         }
     }
 }

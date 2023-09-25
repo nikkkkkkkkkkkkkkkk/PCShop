@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace PCShop.Interfaces
 {
-    public interface IMotherboard
+    public interface IMotherboard : IBase
     {
         SocketType SocketType { get; set; }
         Chipset Chipset { get; set; }
         VideoOutput VideoOutput { get; set; }
-        string RAMType { get; set; }
+        RAMType RAMType { get; set; }
         int RAMMaxFreq { get; set; }
         int RAMSlots { get; set; }
         int PCI { get; set; }

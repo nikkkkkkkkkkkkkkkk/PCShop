@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PCShop.Interfaces
 {
-    public interface IComputerCase
+    public interface IComputerCase : IBase
     {
         FormFactor FormFactor { get; set; }
         int Size {  get; set; }

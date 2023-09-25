@@ -5,29 +5,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PCShop.Windows"
         mc:Ignorable="d"
-        Title="Motherboard" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterOwner" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+        Title="Motherboard" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterOwner" MouseLeftButtonDown="Window_MouseLeftButtonDown" Height ="400" Width="705">
     <Grid>
         <DockPanel Margin="0,0,0,45">
             <StackPanel Width="225" Margin="5,5,5,0">
                 <TextBlock Text="Название:" Margin="5,10,5,0"/>
-                <TextBox x:Name="name" Margin="5"/>
+                <TextBox x:Name="name" Margin="5" Height="22"/>
                 <TextBlock Text="Цена:" Margin="5,5,0,0"/>
-                <TextBox x:Name="price" Margin="5"/>
-                <TextBlock Text="Количество на складе:" Margin="5,5,0,0"/>
-                <TextBox x:Name="count" Margin="5"/>
+                <TextBox x:Name="price" Margin="5" Height="22"/>
+                <TextBlock Text="Количество партии:" Margin="5,5,0,0"/>
+                <TextBox x:Name="count" Margin="5" Height="22"/>
                 <TextBlock Text="Изображение" Margin="5,5,0,0"/>
-                <DockPanel>
-                    <TextBox Margin="5"/>
-                    <Button Height="20" Width="60" HorizontalAlignment="Right" Margin="5" Content="Выбрать"/>
-                </DockPanel>
+                <Grid Margin="5" Height="22">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="65"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="imagePath" Grid.Column="0"/>
+                    <Button Width="60" HorizontalAlignment="Right" Content="Выбрать" Grid.Column="1" Click="SelectImageButton_Click"/>
+                </Grid>
                 <TextBlock Text="Сокет" Margin="5,5,0,0"/>
-                <ComboBox Margin="5"/>
+                <ComboBox Margin="5" x:Name="socket"/>
                 <TextBlock Text="Чипсет" Margin="5,5,0,0"/>
-                <ComboBox Margin="5"/>
+                <ComboBox Margin="5" x:Name="chipset"/>
             </StackPanel>
-            <Grid Width="225" Margin="5,5,5,0">
-
-            </Grid>
+            <StackPanel Width="225" Margin="5,5,5,0">
+                <TextBlock Text="Видеовыходы" Margin="5,10,0,0"/>
+                <StackPanel Height="22" Orientation="Horizontal" Margin="5">
+                    <CheckBox Content="VGA" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                    <CheckBox Content="HDMI" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                    <CheckBox Content="DP" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                    <CheckBox Content="DVI" VerticalAlignment="Center"/>
+                </StackPanel>
+                <TextBlock Text="Тип оперативной памяти" Margin="5,5,0,0"/>
+                <ComboBox Margin="5" x:Name="ramType"/>
+                <TextBlock Text="Максимальная частота памяти" Margin="5,5,0,0"/>
+                <TextBox x:Name="ramMaxFreq" Margin="5" Height="22"/>
+                <TextBlock Text="Количество слотов для памяти" Margin="5,5,0,0"/>
+                <TextBox Margin="5" Height="22" x:Name="ramSlots"/>
+                <TextBlock Text="Количество PCI разъемов" Margin="5,5,0,0"/>
+                <TextBox Margin="5" Height="22" x:Name="pci"/>
+                <TextBlock Text="Количество PCI Express разъемов" Margin="5,5,0,0"/>
+                <TextBox Margin="5" Height="22" x:Name="pciExpress"/>
+            </StackPanel>
+            <StackPanel Width="225" Margin="5,5,5,0">
+                <TextBlock Text="Количество SATA разъемов" Margin="5,10,0,0"/>
+                <ComboBox Margin="5" x:Name="sata" Visibility="Hidden"/>
+                <TextBlock Text="Количество USB" Margin="5,5,0,0"/>
+                <TextBox Margin="5" Height="22" x:Name="usb"/>
+                <TextBlock Text="Сетевая карта" Margin="5,5,0,0"/>
+                <TextBox Margin="5" Height="22" x:Name="networkCard" Visibility="Hidden"/>
+                <TextBlock Text="Звуковая карта" Margin="5,5,0,0"/>
+                <TextBox Margin="5" Height="22" x:Name="soundCard"/>
+                <TextBlock Text="Форм-фактор" Margin="5,5,0,0"/>
+                <ComboBox Margin="5" x:Name="formFactor"/>
+                <TextBlock Text="Производитель" Margin="5,5,0,0"/>
+                <TextBlock Margin="5" x:Name="manufacturer" Visibility="Hidden"/>
+            </StackPanel>
         </DockPanel>
         <DockPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="45">
             <Button Click="Cancel_Click" Content="Cancel" Width="70" Margin="5"/>

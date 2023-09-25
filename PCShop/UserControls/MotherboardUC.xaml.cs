@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PCShop.Modules;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,8 +24,9 @@ namespace PCShop.UserControls
         public MotherboardUC(Classes.Motherboard motherboard)
         {
             InitializeComponent();
-            name.Text = motherboard.Name;
-            id.Text = $"{motherboard.Id}";
+            name.Text = $"Модель: {motherboard.Name}";
+            image = ImageByte.ByteToImage(motherboard.Image);
         }
+
     }
 }

@@ -24,6 +24,7 @@ namespace PCShop.Classes
         public DbSet<Motherboard> Motherboards { get; set; } = null!;
         public DbSet<PowerUnit> PowerUnits { get; set; } = null!;
         public DbSet<RAM> RAMs { get; set; } = null!;
+        public DbSet<RAMType> RAMTypes { get; set; } = null!;
         public DbSet<SocketType> SocketTypes { get; set; } = null!;
         public DbSet<Storage> Storages { get; set; } = null!;
         public DbSet<VideoOutput> VideoOutputs { get; set; } = null!;

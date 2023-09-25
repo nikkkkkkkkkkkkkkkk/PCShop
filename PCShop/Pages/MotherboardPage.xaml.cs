@@ -24,7 +24,13 @@ namespace PCShop.PagesClasses
         public MotherboardPage()
         {
             InitializeComponent();
-            foreach (var item in Motherboards.Get())
+            LoadElemenets();
+        }
+
+        private void LoadElemenets()
+        {
+            motherboards.Children.Clear();
+            foreach (var item in Products.GetMotherboards())
             {
                 motherboards.Children.Add(new UserControls.MotherboardUC(item));
             }
@@ -35,6 +41,7 @@ namespace PCShop.PagesClasses
             Windows.MotherboardW window = new Windows.MotherboardW();
             window.Owner = MainWindow.mainWindow;
             window.ShowDialog();
+            LoadElemenets();
         }
     }
 }
