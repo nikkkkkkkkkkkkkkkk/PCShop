@@ -10,13 +10,9 @@ namespace PCShop.Classes
     public class ApplicationContext : DbContext
     {
         public DbSet<User> Users { get; set; } = null!;
-        public DbSet<Rights> Rights { get; set; } = null!;
         public DbSet<ComputerCase> ComputerCases { get; set; } = null!;
-        public DbSet<FormFactor> FormFactors { get; set; } = null!;
         public DbSet<Manufacturer> Manufacturers { get; set; } = null!;
         public DbSet<ComputerCase> ComputerCase { get; set; } = null!;
-        public DbSet<Chipset> Chipsets { get; set; } = null!;
-        public DbSet<Connector> Connectors { get; set; } = null!;
         public DbSet<Cooler> Coolers { get; set; } = null!;
         public DbSet<CPU> CPUs{ get; set; } = null!;
         public DbSet<NetworkCard> NetworkCards { get; set; } = null!;
@@ -24,12 +20,8 @@ namespace PCShop.Classes
         public DbSet<Motherboard> Motherboards { get; set; } = null!;
         public DbSet<PowerUnit> PowerUnits { get; set; } = null!;
         public DbSet<RAM> RAMs { get; set; } = null!;
-        public DbSet<RAMType> RAMTypes { get; set; } = null!;
-        public DbSet<SocketType> SocketTypes { get; set; } = null!;
         public DbSet<Storage> Storages { get; set; } = null!;
-        public DbSet<VideoOutput> VideoOutputs { get; set; } = null!;
         public DbSet<ShoppingCart> ShoppingCart { get; set; } = null!;
-        public DbSet<Category> Categories { get; set; } = null!;
 
         public ApplicationContext()
         {

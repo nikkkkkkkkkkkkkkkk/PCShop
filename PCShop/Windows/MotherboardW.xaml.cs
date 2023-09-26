@@ -16,6 +16,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PCShop.Static_Classes;
 
 namespace PCShop.Windows
 {
@@ -24,73 +25,33 @@ namespace PCShop.Windows
     /// </summary>
     public partial class MotherboardW : Window
     {
-        byte[] image = null;
+        private byte[]? image;
         public MotherboardW()
         {
             InitializeComponent();
-            foreach (var item in DB.db.SocketTypes.Local)
-            {
-                socket.Items.Add(item.Name);
-            }
-            foreach (var item in DB.db.Chipsets.Local)
-            {
-                chipset.Items.Add(item.Name);
-            }
-            foreach (var item in DB.db.RAMTypes.Local)
-            {
-                ramType.Items.Add(item.Name);
-            }
-            foreach (var item in DB.db.FormFactors.Local)
-            {
-                formFactor.Items.Add(item.Name);
-            }
+            socketType.ItemsSource = SocketTypes.List();
+            chipset.ItemsSource = Enumerable.Concat(ChipsetsAMD.List(), ChipsetsIntel.List());
+            formFactor.ItemsSource = FormFactors.List();
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                DB.db.Motherboards.Add(new Motherboard()
-                {
-                    Name = name.Text,
-                    Price = int.Parse(price.Text),
-                    Count = int.Parse(count.Text),
-                    Image = image,
-                    SocketType = DB.db.SocketTypes.Local.ToArray()[socket.SelectedIndex],
-                    Chipset = DB.db.Chipsets.Local.ToArray()[chipset.SelectedIndex],
-                    VideoOutput = null,
-                    RAMType = DB.db.RAMTypes.Local.ToArray()[ramType.SelectedIndex],
-                    RAMMaxFreq = int.Parse(ramMaxFreq.Text),
-                    RAMSlots = int.Parse(ramSlots.Text),
-                    PCI = int.Parse(pci.Text),
-                    PCIExpress = int.Parse(pciExpress.Text),
-                    SATA = 4,
-                    USB = int.Parse(usb.Text),
-                    NetworkCard = new NetworkCard()
-                    {
-                        Bluetooth = "Bluetooth",
-                        Speed = 30,
-                        WiFi = "Krutoy wifi"
-                    },
-                    SoundCard = double.Parse(soundCard.Text),
-                    FormFactor = DB.db.FormFactors.Local.ToArray()[formFactor.SelectedIndex],
-                    Manufacturer = new Manufacturer()
-                    {
-                        Name = "DEXP",
-                        Description = "compam"
-                    }
-                });
+                DB.db.Motherboards.Add(new Motherboard(model.Text,"Материнская плата",int.Parse(price.Text),image,formFactor.SelectedValue.ToString(),int.Parse(height.Text),int.Parse(width.Text),socketType.SelectedValue.ToString(),chipset.SelectedValue.ToString(),compatibleProcessorCores.Text,int.Parse(ramSlots.Text),ramFormFactor.Text,ramType.Text,int.Parse(numberMemoryChannels.Text),int.Parse(maxMemoryCapacity.Text),int.Parse(maxFreqMemory.Text),double.Parse(versionPCIExpressStorage.Text),int.Parse(numberM2Connectors.Text),int.Parse(numberSATAConnectors.Text),(bool)supportNVMe.IsChecked,numberAndTypeUSB.Text,int.Parse(numberNetworkPorts.Text),int.Parse(numberAnalogAudioJack.Text),internalUSBConnectors.Text,CPUCoolerPowerConnector.Text,int.Parse
+                    (number4PinForCooler.Text),int.Parse(number4PinForLCS.Text),int.Parse(number3PinForCooler.Text),double.Parse(audioSchema.Text),chipsetAudioAdapter.Text,double.Parse(speedNetworkAdapter.Text),chipsetNetworkAdapter.Text,builtInWiFiAdapter.Text,WiFiController.Text
+                    ,bluetooth.Text,mainPowerConnector.Text,CPUPowerConnector.Text,int.Parse(numberPowerPhases.Text),passiveCooling.Text,activeCooling.Text));
                 DB.Save();
                 DB.LoadMotherboards();
                 DB.Load();
                 Close();
-            }
+        }
             catch (Exception ex)
             {
                 MessageBox.Show($"{ex.Message}\n{ex.InnerException}");
                 return;
             }
-        }
+}
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {

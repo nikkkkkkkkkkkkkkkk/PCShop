@@ -24,8 +24,8 @@ namespace PCShop.UserControls
         public MotherboardUC(Classes.Motherboard motherboard)
         {
             InitializeComponent();
-            name.Text = $"Модель: {motherboard.Name}";
-            image = ImageByte.ByteToImage(motherboard.Image);
+            name.Text = $"Модель: {motherboard.Model}";
+            image.Source = ImageByte.ByteToImage(motherboard.Image);
         }
 
     }

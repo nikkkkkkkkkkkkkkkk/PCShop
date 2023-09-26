@@ -5,64 +5,97 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PCShop.Windows"
         mc:Ignorable="d"
-        Title="Motherboard" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterOwner" MouseLeftButtonDown="Window_MouseLeftButtonDown" Height ="400" Width="705">
+        Title="Motherboard" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterOwner" MouseLeftButtonDown="Window_MouseLeftButtonDown" Width="300">
     <Grid>
-        <DockPanel Margin="0,0,0,45">
-            <StackPanel Width="225" Margin="5,5,5,0">
-                <TextBlock Text="Название:" Margin="5,10,5,0"/>
-                <TextBox x:Name="name" Margin="5" Height="22"/>
-                <TextBlock Text="Цена:" Margin="5,5,0,0"/>
-                <TextBox x:Name="price" Margin="5" Height="22"/>
-                <TextBlock Text="Количество партии:" Margin="5,5,0,0"/>
-                <TextBox x:Name="count" Margin="5" Height="22"/>
-                <TextBlock Text="Изображение" Margin="5,5,0,0"/>
-                <Grid Margin="5" Height="22">
+        <ScrollViewer Margin="5,5,5,45" VerticalScrollBarVisibility="Hidden" >
+            <StackPanel Margin="10,0,10,0" Background="Transparent" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+                <TextBlock Text="Модель:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="model"/>
+                <TextBlock Text="Цена:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="price"/>
+                <TextBlock Text="Изображение:" HorizontalAlignment="Left"/>
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="65"/>
+                        <ColumnDefinition Width="70"/>
                     </Grid.ColumnDefinitions>
-                    <TextBox x:Name="imagePath" Grid.Column="0"/>
-                    <Button Width="60" HorizontalAlignment="Right" Content="Выбрать" Grid.Column="1" Click="SelectImageButton_Click"/>
+                    <TextBox x:Name="imagePath" Grid.Column="0" Margin="0,0,5,0"/>
+                    <Button Click="SelectImageButton_Click" Grid.Column="1" Content="Выбрать" />
                 </Grid>
-                <TextBlock Text="Сокет" Margin="5,5,0,0"/>
-                <ComboBox Margin="5" x:Name="socket"/>
-                <TextBlock Text="Чипсет" Margin="5,5,0,0"/>
-                <ComboBox Margin="5" x:Name="chipset"/>
+                <TextBlock Text="Форм-фактор:" HorizontalAlignment="Left"/>
+                <ComboBox x:Name="formFactor"/>
+                <TextBlock Text="Высота:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="height"/>
+                <TextBlock Text="Ширина:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="width"/>
+                <TextBlock Text="Тип сокета:" HorizontalAlignment="Left"/>
+                <ComboBox x:Name="socketType"/>
+                <TextBlock Text="Чипсет:" HorizontalAlignment="Left"/>
+                <ComboBox x:Name="chipset"/>
+                <TextBlock Text="Совместимые ядра процессоров:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="compatibleProcessorCores"/>
+                <TextBlock Text="Количество слотов памяти:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="ramSlots"/>
+                <TextBlock Text="Форм-фактор ОЗУ:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="ramFormFactor"/>
+                <TextBlock Text="Тип поддерживаемой памяти:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="ramType"/>
+                <TextBlock Text="Количество слотов памяти:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="numberMemoryChannels"/>
+                <TextBlock Text="Максимальный объем памяти:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="maxMemoryCapacity"/>
+                <TextBlock Text="Максимальная частота памяти:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="maxFreqMemory"/>
+                <TextBlock Text="Версия PCI Express накопителей:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="versionPCIExpressStorage"/>
+                <TextBlock Text="Количество разъемов M.2:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="numberM2Connectors"/>
+                <TextBlock Text="Количество портов SATA:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="numberSATAConnectors"/>
+                <TextBlock Text="Поддержка NVMe:" HorizontalAlignment="Left"/>
+                <CheckBox x:Name="supportNVMe"/>
+                <TextBlock Text="Количество и тип USB на задней панели:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="numberAndTypeUSB"/>
+                <TextBlock Text="Количество сетевых портов:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="numberNetworkPorts"/>
+                <TextBlock Text="Количиство аналоговых аудио входов:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="numberAnalogAudioJack"/>
+                <TextBlock Text="Внутренние USB коннекторы:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="internalUSBConnectors"/>
+                <TextBlock Text="Разъем питания процессорного кулера:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="CPUCoolerPowerConnector"/>
+                <TextBlock Text="4-Pin PWM коннекторы для вентиляторов:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="number4PinForCooler"/>
+                <TextBlock Text="4-Pin коннекторы для помпы СЖО:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="number4PinForLCS"/>
+                <TextBlock Text="3-Pin коннекторы для вентиляторов:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="number3PinForCooler"/>
+                <TextBlock Text="Звуковая схема:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="audioSchema"/>
+                <TextBlock Text="Чипсет звукового адаптера:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="chipsetAudioAdapter"/>
+                <TextBlock Text="Скорость сетевого адаптера:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="speedNetworkAdapter"/>
+                <TextBlock Text="Чипсет сетевого адаптера:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="chipsetNetworkAdapter"/>
+                <TextBlock Text="Встроенный адаптер Wi-Fi:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="builtInWiFiAdapter"/>
+                <TextBlock Text="Контроллер WiFi:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="WiFiController"/>
+                <TextBlock Text="Bluetooth:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="bluetooth"/>
+                <TextBlock Text="Основной разъем питания:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="mainPowerConnector"/>
+                <TextBlock Text="Разъем питания процессора:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="CPUPowerConnector"/>
+                <TextBlock Text="Количество фаз питания:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="numberPowerPhases"/>
+                <TextBlock Text="Пассивное охлаждение:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="passiveCooling"/>
+                <TextBlock Text="Активное охлаждение:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="activeCooling"/>
             </StackPanel>
-            <StackPanel Width="225" Margin="5,5,5,0">
-                <TextBlock Text="Видеовыходы" Margin="5,10,0,0"/>
-                <StackPanel Height="22" Orientation="Horizontal" Margin="5">
-                    <CheckBox Content="VGA" VerticalAlignment="Center" Margin="0,0,5,0"/>
-                    <CheckBox Content="HDMI" VerticalAlignment="Center" Margin="0,0,5,0"/>
-                    <CheckBox Content="DP" VerticalAlignment="Center" Margin="0,0,5,0"/>
-                    <CheckBox Content="DVI" VerticalAlignment="Center"/>
-                </StackPanel>
-                <TextBlock Text="Тип оперативной памяти" Margin="5,5,0,0"/>
-                <ComboBox Margin="5" x:Name="ramType"/>
-                <TextBlock Text="Максимальная частота памяти" Margin="5,5,0,0"/>
-                <TextBox x:Name="ramMaxFreq" Margin="5" Height="22"/>
-                <TextBlock Text="Количество слотов для памяти" Margin="5,5,0,0"/>
-                <TextBox Margin="5" Height="22" x:Name="ramSlots"/>
-                <TextBlock Text="Количество PCI разъемов" Margin="5,5,0,0"/>
-                <TextBox Margin="5" Height="22" x:Name="pci"/>
-                <TextBlock Text="Количество PCI Express разъемов" Margin="5,5,0,0"/>
-                <TextBox Margin="5" Height="22" x:Name="pciExpress"/>
-            </StackPanel>
-            <StackPanel Width="225" Margin="5,5,5,0">
-                <TextBlock Text="Количество SATA разъемов" Margin="5,10,0,0"/>
-                <ComboBox Margin="5" x:Name="sata" Visibility="Hidden"/>
-                <TextBlock Text="Количество USB" Margin="5,5,0,0"/>
-                <TextBox Margin="5" Height="22" x:Name="usb"/>
-                <TextBlock Text="Сетевая карта" Margin="5,5,0,0"/>
-                <TextBox Margin="5" Height="22" x:Name="networkCard" Visibility="Hidden"/>
-                <TextBlock Text="Звуковая карта" Margin="5,5,0,0"/>
-                <TextBox Margin="5" Height="22" x:Name="soundCard"/>
-                <TextBlock Text="Форм-фактор" Margin="5,5,0,0"/>
-                <ComboBox Margin="5" x:Name="formFactor"/>
-                <TextBlock Text="Производитель" Margin="5,5,0,0"/>
-                <TextBlock Margin="5" x:Name="manufacturer" Visibility="Hidden"/>
-            </StackPanel>
-        </DockPanel>
+        </ScrollViewer>
         <DockPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="45">
             <Button Click="Cancel_Click" Content="Cancel" Width="70" Margin="5"/>
             <Button Click="Save_Click" Content="Save" Width="70" Margin="5"/>

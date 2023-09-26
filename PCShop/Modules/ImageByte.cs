@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace PCShop.Modules
 {
@@ -16,11 +17,22 @@ namespace PCShop.Modules
             image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
             return ms.ToArray();
         }
-        public static Image ByteToImage(byte[] bytes)
+        public static BitmapImage ByteToImage(byte[] bytes)
         {
-            MemoryStream ms = new MemoryStream(bytes);
-            Image returnImage = Image.FromStream(ms);
-            return returnImage;
+            if (bytes == null || bytes.Length == 0) return null;
+            var image = new BitmapImage();
+            using (var mem = new MemoryStream(bytes))
+            {
+                mem.Position = 0;
+                image.BeginInit();
+                image.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.UriSource = null;
+                image.StreamSource = mem;
+                image.EndInit();
+            }
+            image.Freeze();
+            return image;
         }
     }
 }

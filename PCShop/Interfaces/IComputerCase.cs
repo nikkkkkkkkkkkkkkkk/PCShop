@@ -9,7 +9,7 @@ namespace PCShop.Interfaces
 {
     public interface IComputerCase : IBase
     {
-        FormFactor FormFactor { get; set; }
+        string FormFactor { get; set; }
         int Size {  get; set; }
         int Height { get; set; }
         Manufacturer Manufacturer { get; set; }

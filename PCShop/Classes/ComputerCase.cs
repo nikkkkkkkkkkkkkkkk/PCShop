@@ -12,11 +12,12 @@ namespace PCShop.Classes
     public class ComputerCase : IBase, IComputerCase
     {
         public int Id { get; set; }
-        public string Name { get; set; } = "";
+        public string Model { get; set; }
+        public string Type { get; set; }
         public int Price { get; set; }
         public int Count { get; set; }
         public byte[]? Image { get; set; }
-        public FormFactor FormFactor { get; set; } = new FormFactor();
+        public string FormFactor { get; set; }
         public int Size { get; set; }
         public int Height { get; set; }
         public Manufacturer Manufacturer { get; set; } = new Manufacturer();

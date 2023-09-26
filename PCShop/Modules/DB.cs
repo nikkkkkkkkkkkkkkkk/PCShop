@@ -13,28 +13,19 @@ namespace PCShop.Modules
         public static ApplicationContext db = new();
         public static void Load()
         {
-            db.Categories.Load();
             db.Users.Load();
-            db.Rights.Load();
             db.ComputerCases.Load();
-            db.FormFactors.Load();
             db.Manufacturers.Load();
-            db.Connectors.Load();
             db.Coolers.Load();
             db.CPUs.Load();
-            db.FormFactors.Load();
             db.GPUs.Load();
             db.Motherboards.Load();
             db.NetworkCards.Load();
             db.PowerUnits.Load();
             db.RAMs.Load();
-            db.SocketTypes.Load();
             db.Storages.Load();
             db.Users.Load();
-            db.VideoOutputs.Load();
             db.ShoppingCart.Load();
-            db.Chipsets.Load();
-            db.RAMTypes.Load();
         }
         public static void LoadMotherboards()
         {

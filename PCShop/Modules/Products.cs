@@ -28,14 +28,14 @@ namespace PCShop.Modules
             }
             return product;
         }
-        public static List<ISocketType> GetSocketTypes()
-        {
-            List<ISocketType> product = new List<ISocketType>();
-            foreach (var item in DB.db.SocketTypes.Local)
-            {
-                product.Add(item);
-            }
-            return product;
-        }
+        //public static List<ISocketType> GetSocketTypes()
+        //{
+        //    List<ISocketType> product = new List<ISocketType>();
+        //    foreach (var item in DB.db.SocketTypes.Local)
+        //    {
+        //        product.Add(item);
+        //    }
+        //    return product;
+        //}
     }
 }
