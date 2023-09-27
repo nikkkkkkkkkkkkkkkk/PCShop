@@ -10,40 +10,40 @@
 
     <Grid>
         <DockPanel VerticalAlignment="Top" HorizontalAlignment="Center" x:Name="categories" Height="150">
-            <Button Width="125" Margin="5" Background="White" Click="Motherboard_Click">
+            <Button Style="{DynamicResource CategoryStyle}" Width="130" Click="Motherboard_Click">
                 <StackPanel Margin="5">
                     <Image Source="/Resources/Motherboard.png" Height="100"/>
                     <TextBlock VerticalAlignment="Bottom" Text="Материнские платы"  TextAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button Width="125" Margin="5" Background="White" Click="CPU_Click">
+            <Button Style="{DynamicResource CategoryStyle}" Width="130" Margin="5" Background="White" Click="CPU_Click">
                 <StackPanel Margin="5">
                     <Image Source="/Resources/CPU.png" Height="100"/>
-                    <TextBlock VerticalAlignment="Bottom" Text="Материнские платы"  TextAlignment="Center"/>
+                    <TextBlock VerticalAlignment="Bottom" Text="Процессоры"  TextAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button Width="125" Margin="5" Background="White" Click="GPU_Click">
+            <Button Style="{DynamicResource CategoryStyle}" Width="130" Margin="5" Background="White" Click="GPU_Click">
                 <StackPanel Margin="5">
                     <Image Source="/Resources/GPU.png" Height="100"/>
-                    <TextBlock VerticalAlignment="Bottom" Text="Материнские платы"  TextAlignment="Center"/>
+                    <TextBlock VerticalAlignment="Bottom" Text="Видеокарты"  TextAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button Width="125" Margin="5" Background="White" Click="RAM_Click">
+            <Button Style="{DynamicResource CategoryStyle}" Width="130" Margin="5" Background="White" Click="RAM_Click">
                 <StackPanel Margin="5">
                     <Image Source="/Resources/RAM.png" Height="100"/>
-                    <TextBlock VerticalAlignment="Bottom" Text="Материнские платы"  TextAlignment="Center"/>
+                    <TextBlock VerticalAlignment="Bottom" Text="Оперативная память"  TextAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button Width="125" Margin="5" Background="White" Click="PowerUnit_Click">
+            <Button Style="{DynamicResource CategoryStyle}" Width="130" Margin="5" Background="White" Click="PowerUnit_Click">
                 <StackPanel Margin="5">
                     <Image Source="/Resources/PowerUnit.png" Height="100"/>
-                    <TextBlock VerticalAlignment="Bottom" Text="Материнские платы"  TextAlignment="Center"/>
+                    <TextBlock VerticalAlignment="Bottom" Text="Блоки питания"  TextAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button Width="125" Margin="5" Background="White" Click="ComputerCase">
+            <Button Style="{DynamicResource CategoryStyle}" Width="130" Margin="5" Background="White" Click="ComputerCase">
                 <StackPanel Margin="5">
                     <Image Source="/Resources/ComputerCase.png" Height="100"/>
-                    <TextBlock VerticalAlignment="Bottom" Text="Материнские платы"  TextAlignment="Center"/>
+                    <TextBlock VerticalAlignment="Bottom" Text="Корпуса"  TextAlignment="Center"/>
                 </StackPanel>
             </Button>
         </DockPanel>

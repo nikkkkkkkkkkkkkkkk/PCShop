@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PCShop.Classes
 {
-    public class Storage : IBase
+    public class Storage
     {
         public int Id { get; set; }
         public string Model { get; set; } = "";
@@ -19,7 +19,7 @@ namespace PCShop.Classes
         public int WriteResource {  get; set; }
         public int WriteSpeed {  get; set; }
         public int ReadSpeed { get; set; }
-        public int thickness {  get; set; }
+        public int Thickness {  get; set; }
         public Manufacturer Manufacturer { get; set; } = new Manufacturer();
     }
     public class SSD : Storage

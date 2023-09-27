@@ -28,6 +28,8 @@ namespace PCShop.Interfaces
         int NumberM2Connectors { get; set; }
         int NumberSATAConnectors { get; set; }
         bool SupportNVMe { get; set; }
+        double VersionPCIExpress { get; set; }
+        int NumberPCIEx16Connectors { get; set; }
         string NumberAndTypeUSB { get; set; }
         int NumberNetworkPorts { get; set; }
         int NumberAnalogAudioJack { get; set; }

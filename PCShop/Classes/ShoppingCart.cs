@@ -1,22 +1,31 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using PCShop.Interfaces;
+using PCShop.Modules;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace PCShop.Classes
 {
     public class ShoppingCart
     {
+        public ShoppingCart(int productId, string productType)
+        {
+            UserId = DB.currentUser.Id;
+            ProductId = productId;
+            ProductType = productType;
+        }
+        public ShoppingCart()
+        {
+        }
         public int Id { get; set; }
-        public ComputerCase? ComputerCase { get; set; }
-        public PowerUnit? PowerUnit { get; set; }
-        public RAM? RAM { get; set; }
-        public CPU? CPU { get; set; }
-        public Motherboard? Motherboard { get; set; }
-        public HDD? HDD { get; set; }
-        public SSD? SSD { get; set; }
-        public Cooler? Cooler { get; set; }
-        public GPU? GPU { get; set; }
+        public Guid Guid { get; set; } = Guid.NewGuid();
+        public int UserId {  get; set; }
+        public int ProductId { get; set; }
+        public string ProductType { get; set; }
     }
 }

@@ -1,4 +1,7 @@
-﻿using PCShop.Modules;
+﻿using PCShop.Classes;
+using PCShop.Interfaces;
+using PCShop.Modules;
+using PCShop.Static_Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,12 +24,41 @@ namespace PCShop.UserControls
     /// </summary>
     public partial class MotherboardUC : UserControl
     {
-        public MotherboardUC(Classes.Motherboard motherboard)
+        Motherboard motherboard;
+        public MotherboardUC(Motherboard motherboard)
         {
             InitializeComponent();
-            name.Text = $"Модель: {motherboard.Model}";
+            this.motherboard = motherboard;
+            var shortСharacteristic = $"{motherboard.SocketType}, {motherboard.Chipset}, {motherboard.RAMSlots}x{motherboard.RAMType}-{motherboard.MaxFreqMemory} МГц, {motherboard.NumberPCIEx16Connectors}xPCI-Ex16, {motherboard.FormFactor}";
+            model.Text = $"{motherboard.Model} [{shortСharacteristic}]";
             image.Source = ImageByte.ByteToImage(motherboard.Image);
+            price.Text = $"Цена: {motherboard.Price} ₽";
+            type.Text = motherboard.Type;
         }
 
+        private void BuyButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (DB.db.ShoppingCart.FirstOrDefault(x => x.ProductId == motherboard.Id && x.ProductType == ProductTypes.Motherboard) != null)
+            {
+                //DB.currentUser.ShoppingCart.Quantity++;
+                //DB.db.ShoppingCart.Update(DB.currentUser.ShoppingCart);
+                MessageBox.Show("ok");
+            }
+            else
+            {
+                //DB.db.ShoppingCart.Add(new ProductsForBuy()
+                //{
+                //    UserId = DB.currentUser.Id
+                //});
+            }
+            DB.Save();
+            DB.Load();
+        }
+
+        private void model_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

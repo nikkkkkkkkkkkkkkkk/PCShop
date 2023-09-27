@@ -22,6 +22,6 @@ namespace PCShop.Classes
         public string SecondName { get; set; }
         private byte[]? ProfilePicture { get; set; }
         public string Rights { get; set; }
-        public ShoppingCart? ShoppingCart { get; set; }
+        public ShoppingCart ShoppingCart { get; set; }
     }
 }

@@ -9,8 +9,8 @@ namespace PCShop.Classes
 {
     public class PagesClass
     {
-        public static PagesClasses.MainPage mainPage = new PagesClasses.MainPage();
-        private static PagesClasses.MotherboardPage motherboardPage = new PagesClasses.MotherboardPage();
+        public static PagesClasses.MainPage mainPage = new();
+        private static PagesClasses.MotherboardPage motherboardPage = new();
         public enum AvailablePages
         {
             MainPage,

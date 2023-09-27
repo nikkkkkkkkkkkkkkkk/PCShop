@@ -1,6 +1,8 @@
 ﻿using PCShop.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Security.Cryptography.Xml;
 using System.Text;
@@ -10,7 +12,7 @@ namespace PCShop.Classes
 {
     public class Motherboard : IBase, IMotherboard
     {
-        public Motherboard(string model, string type, int price, byte[]? image, string? formFactor, int height, int width, string socketType, string chipset, string? compatibleProcessorCores, int rAMSlots, string rAMFormFactor, string rAMType, int numberMemoryChannels, int maxMemoryCapacity, int maxFreqMemory, double versionPCIExpresStorage, int numberM2Connectors, int numberSATAConnectors, bool supportNVMe, string numberAndTypeUSB, int numberNetworkPorts, int numberAnalogAudioJack, string internalUSBConnectors, string cPUCoolerPowerConnector, int number4PinForCooler, int number4PinForLCS, int number3PinForCooler, double audioSchema, string chipsetAudioAdapter, double speedNetworkAdapter, string chipsetNetworkAdapter, string builtInWiFiAdapter, string wiFiController, string bluetooth, string mainPowerConnector, string cPUPowerConnector, int numberPowerPhases, string passiveCooling, string activeCooling)
+        public Motherboard(string model, string type, int price, byte[]? image, string? formFactor, int height, int width, string socketType, string chipset, string? compatibleProcessorCores, int rAMSlots, string rAMFormFactor, string rAMType, int numberMemoryChannels, int maxMemoryCapacity, int maxFreqMemory, double versionPCIExpresStorage, int numberM2Connectors, int numberSATAConnectors, bool supportNVMe, double versionPCIExpress, int numberPCIEx16Connectors, string numberAndTypeUSB, int numberNetworkPorts, int numberAnalogAudioJack, string internalUSBConnectors, string cPUCoolerPowerConnector, int number4PinForCooler, int number4PinForLCS, int number3PinForCooler, double audioSchema, string chipsetAudioAdapter, double speedNetworkAdapter, string chipsetNetworkAdapter, string builtInWiFiAdapter, string wiFiController, string bluetooth, string mainPowerConnector, string cPUPowerConnector, int numberPowerPhases, string passiveCooling, string activeCooling)
         {
             Model = model ?? throw new ArgumentNullException(nameof(model));
             Type = type ?? throw new ArgumentNullException(nameof(type));
@@ -32,6 +34,8 @@ namespace PCShop.Classes
             NumberM2Connectors = numberM2Connectors;
             NumberSATAConnectors = numberSATAConnectors;
             SupportNVMe = supportNVMe;
+            VersionPCIExpress = versionPCIExpress;
+            NumberPCIEx16Connectors = numberPCIEx16Connectors;
             NumberAndTypeUSB = numberAndTypeUSB ?? throw new ArgumentNullException(nameof(numberAndTypeUSB));
             NumberNetworkPorts = numberNetworkPorts;
             NumberAnalogAudioJack = numberAnalogAudioJack;
@@ -53,7 +57,6 @@ namespace PCShop.Classes
             PassiveCooling = passiveCooling ?? throw new ArgumentNullException(nameof(passiveCooling));
             ActiveCooling = activeCooling ?? throw new ArgumentNullException(nameof(activeCooling));
         }
-
         public int Id { get; set; }
         public string Model { get; set; }
         public string Type { get; set; }
@@ -75,6 +78,8 @@ namespace PCShop.Classes
         public int NumberM2Connectors { get; set; }
         public int NumberSATAConnectors { get; set; }
         public bool SupportNVMe { get; set; }
+        public double VersionPCIExpress { get; set; }
+        public int NumberPCIEx16Connectors { get; set; }
         public string NumberAndTypeUSB { get; set; }
         public int NumberNetworkPorts { get; set; }
         public int NumberAnalogAudioJack { get; set; }

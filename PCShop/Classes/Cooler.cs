@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PCShop.Classes
 {
-    public class Cooler : IBase
+    public class Cooler
     {
         public int Id { get; set; }
         public string Model { get; set; } = "";

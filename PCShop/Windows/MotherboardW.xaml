@@ -40,7 +40,7 @@
                 <TextBox x:Name="ramFormFactor"/>
                 <TextBlock Text="Тип поддерживаемой памяти:" HorizontalAlignment="Left"/>
                 <TextBox x:Name="ramType"/>
-                <TextBlock Text="Количество слотов памяти:" HorizontalAlignment="Left"/>
+                <TextBlock Text="Количество каналов памяти:" HorizontalAlignment="Left"/>
                 <TextBox x:Name="numberMemoryChannels"/>
                 <TextBlock Text="Максимальный объем памяти:" HorizontalAlignment="Left"/>
                 <TextBox x:Name="maxMemoryCapacity"/>
@@ -54,6 +54,10 @@
                 <TextBox x:Name="numberSATAConnectors"/>
                 <TextBlock Text="Поддержка NVMe:" HorizontalAlignment="Left"/>
                 <CheckBox x:Name="supportNVMe"/>
+                <TextBlock Text="Версия PCI Express:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="versionPCIExpress"/>
+                <TextBlock Text="Количество слотов PCE-E x16:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="numberPCIEx16Connectors"/>
                 <TextBlock Text="Количество и тип USB на задней панели:" HorizontalAlignment="Left"/>
                 <TextBox x:Name="numberAndTypeUSB"/>
                 <TextBlock Text="Количество сетевых портов:" HorizontalAlignment="Left"/>

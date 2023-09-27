@@ -20,6 +20,6 @@ namespace PCShop.Classes
         public int Frequency { get; set; }
         public int MemoryFrequency { get; set; }
         public int BusWidth { get; set; }
-        public Manufacturer Manufacturer { get; set; } = new Manufacturer();
+        //public Manufacturer Manufacturer { get; set; } = new Manufacturer();
     }
 }
