@@ -15,18 +15,23 @@ namespace PCShop.Classes
     {
         public ShoppingCart(int productId, string productType)
         {
+            if (DB.currentUser == null)
+            {
+                return;
+            }
+
             UserId = DB.currentUser.Id;
             ProductId = productId;
             ProductType = productType;
             GuidString = Guid.NewGuid().ToString();
+            Quantity = 1;
         }
-        public ShoppingCart()
-        {
-        }
+        public ShoppingCart() { }
         public int Id { get; set; }
         public string GuidString { get; set; }
         public int UserId {  get; set; }
         public int ProductId { get; set; }
         public string ProductType { get; set; }
+        public int Quantity { get; set; }
     }
 }

@@ -38,23 +38,18 @@ namespace PCShop.UserControls
 
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
-
-            if (DB.db.ShoppingCart.FirstOrDefault(x => x.ProductId == motherboard.Id && x.ProductType == ProductTypes.Motherboard && x.UserId == DB.currentUser.Id) != null)
+            ShoppingCart? localShoppignCart = DB.db.ShoppingCart.FirstOrDefault(x => x.ProductId == motherboard.Id && x.ProductType == ProductTypes.Motherboard && x.UserId == DB.currentUser.Id);
+            if (localShoppignCart != null)
             {
-                MessageBox.Show("tipo");
+                localShoppignCart.Quantity++;
+                DB.db.ShoppingCart.Update(localShoppignCart);
             }
             else
             {
-                DB.db.ShoppingCart.Add(new ShoppingCart(motherboard.Id,motherboard.Type));
-				MessageBox.Show("new");
-			}
-			DB.Save();
+                DB.db.ShoppingCart.Add(new ShoppingCart(motherboard.Id, motherboard.Type));
+            }
+            DB.Save();
             DB.Load();
-        }
-
-        private void model_PreviewMouseUp(object sender, MouseButtonEventArgs e)
-        {
-
         }
     }
 }

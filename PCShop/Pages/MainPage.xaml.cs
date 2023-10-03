@@ -1,8 +1,10 @@
 ﻿using PCShop.Classes;
+using PCShop.Modules;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace PCShop.PagesClasses
+namespace PCShop.Pages
 {
     /// <summary>
     /// Логика взаимодействия для MainPage.xaml
@@ -42,6 +44,22 @@ namespace PCShop.PagesClasses
         private void ComputerCase(object sender, RoutedEventArgs e)
         {
             PagesClass.NavigateTo(PagesClass.AvailablePages.MotherboardPage);
+        }
+
+        private void Profile_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ShoppingCart_Click(object sender, RoutedEventArgs e)
+        {
+            //string guids = "";
+            //foreach (var item in DB.db.ShoppingCart.Local.Where(x => x.UserId == DB.currentUser.Id))
+            //{
+            //    guids += $"{item.Id}. {item.ProductId} - {item.ProductType}. Количество: {item.Quantity} [{item.GuidString}]\n";
+            //}
+            //MessageBox.Show(guids);
+            PagesClass.NavigateTo(PagesClass.AvailablePages.ShoppingCart);
         }
     }
 }

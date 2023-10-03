@@ -35,7 +35,7 @@ namespace PCShop
 			frame = privateFrame;
 
 			DB.Load();
-			frame.Navigate(new PagesClasses.AuthPage());
+			frame.Navigate(new Pages.AuthPage());
 		}
 
         private void SelectImage_Click(object sender, RoutedEventArgs e)

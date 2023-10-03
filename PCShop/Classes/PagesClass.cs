@@ -10,17 +10,21 @@ namespace PCShop.Classes
 {
     public class PagesClass
     {
-        public static PagesClasses.MainPage mainPage = new();
-        private static PagesClasses.MotherboardPage motherboardPage = new();
+        public static Pages.MainPage mainPage = new();
+        private static Pages.MotherboardPage motherboardPage = new();
+        private static Pages.ShoppingCartPage shoppingCartPage = new();
         public enum AvailablePages
         {
             MainPage,
-            MotherboardPage
+            MotherboardPage,
+            ShoppingCart,
         }
         public static void NavigateTo(AvailablePages page)
         {
 			if (page == AvailablePages.MotherboardPage)
                 mainPage.frame.Navigate(motherboardPage);
+			if (page == AvailablePages.ShoppingCart)
+                mainPage.frame.Navigate(shoppingCartPage);
         }
     }
 }

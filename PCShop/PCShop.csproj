@@ -21,7 +21,9 @@
     <None Remove="Resources\GPU.png" />
     <None Remove="Resources\Motherboard.png" />
     <None Remove="Resources\PowerUnit.png" />
+    <None Remove="Resources\Profile.png" />
     <None Remove="Resources\RAM.png" />
+    <None Remove="Resources\Shopping Cart.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,7 +38,9 @@
     <Resource Include="Resources\GPU.png" />
     <Resource Include="Resources\Motherboard.png" />
     <Resource Include="Resources\PowerUnit.png" />
+    <Resource Include="Resources\Profile.png" />
     <Resource Include="Resources\RAM.png" />
+    <Resource Include="Resources\Shopping Cart.png" />
   </ItemGroup>
 
   <ItemGroup>

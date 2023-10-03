@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PCShop.PagesClasses
+namespace PCShop.Pages
 {
     /// <summary>
     /// Логика взаимодействия для MotherboardP.xaml

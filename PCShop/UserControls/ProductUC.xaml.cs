@@ -1,4 +1,5 @@
 ﻿using PCShop.Classes;
+using PCShop.Interfaces;
 using PCShop.Modules;
 using System;
 using System.Collections.Generic;
@@ -15,25 +16,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PCShop.Pages
+namespace PCShop.UserControls
 {
     /// <summary>
-    /// Логика взаимодействия для AuthPage.xaml
+    /// Логика взаимодействия для ProductUC.xaml
     /// </summary>
-    public partial class AuthPage : Page
+    public partial class ProductUC : UserControl
     {
-        public AuthPage()
+        public ProductUC(ShoppingCart item)
         {
             InitializeComponent();
+            DB.db.All
+            model.Text = item.
         }
-        private void AuthButton_Click(object sender, RoutedEventArgs e)
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            User? user = DB.db.Users.Local.FirstOrDefault(x => x.Login == login.Text && x.Password == password.Text);
-            if (user != null)
-			{
-                MainWindow.frame.Navigate(PagesClass.mainPage);
-				DB.currentUser = user;
-            }
+
         }
     }
 }

@@ -1,22 +1,24 @@
-﻿<UserControl Style="{DynamicResource ProductStyle}" x:Class="PCShop.UserControls.MotherboardUC"
+﻿<UserControl Style="{DynamicResource ProductStyle}"  x:Class="PCShop.UserControls.ProductUC"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PCShop.UserControls"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              Height="100" d:DesignWidth="868" Background="White" Margin="10,10,10,10" Width="830">
     <Grid>
         <DockPanel>
+            <CheckBox VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,0,0,0"/>
             <Image x:Name="image" Source="/Resources/Motherboard.png" Margin="10,10,5,10" HorizontalAlignment="Left" Width="70"/>
             <StackPanel HorizontalAlignment="Left" MaxWidth="600" Margin="5,10,5,10">
-                <Button Style="{DynamicResource ModelButtonStyle}">
+                <Button Style="{DynamicResource ModelButtonStyle}" >
                     <TextBlock TextWrapping="Wrap" x:Name="model" Text="GIGABYTE B550 AORUS ELITE V2 [AM4, AMD B550, 4xDDR4-3200 МГц, 3xPCI-Ex16, 2xM.2, Standard-ATX]"/>
-                </Button>                
+                </Button>
+                
                 <TextBlock x:Name="type" FontSize="14" Text="Материнская плата"/>
             </StackPanel>
             <StackPanel Margin="5,10,10,0" HorizontalAlignment="Right">
-                <Button Style="{DynamicResource BuyButtonStyle}" Click="BuyButton_Click"/>
+                <Button Style="{DynamicResource DeleteButtonStyle}" Click="DeleteButton_Click"/>
                 <TextBlock x:Name="price" Text="Цена: 19399 ₽" HorizontalAlignment="Center" Margin="0,10,0,0"/>
             </StackPanel>
         </DockPanel>

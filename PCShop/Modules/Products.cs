@@ -19,23 +19,23 @@ namespace PCShop.Modules
             }
             return product;
         }
-        public static List<IComputerCase> GetComputerCases()
+        public static List<ComputerCase> GetComputerCases()
         {
-            List<IComputerCase> product = new List<IComputerCase>();
+            List<ComputerCase> product = new List<ComputerCase>();
             foreach (var item in DB.db.ComputerCase.Local)
             {
                 product.Add(item);
             }
             return product;
         }
-        //public static List<ISocketType> GetSocketTypes()
-        //{
-        //    List<ISocketType> product = new List<ISocketType>();
-        //    foreach (var item in DB.db.SocketTypes.Local)
-        //    {
-        //        product.Add(item);
-        //    }
-        //    return product;
-        //}
+        public static List<ShoppingCart> GetShoppingCart()
+        {
+            List<ShoppingCart> product = new List<ShoppingCart>();
+            foreach (var item in DB.db.ShoppingCart.Local.Where(x => x.UserId == DB.currentUser.Id))
+            {
+                product.Add(item);
+            }
+            return product;
+        }
     }
 }
