@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Navigation;
 
 namespace PCShop.Classes
@@ -18,7 +19,7 @@ namespace PCShop.Classes
         }
         public static void NavigateTo(AvailablePages page)
         {
-            if (page == AvailablePages.MotherboardPage)
+			if (page == AvailablePages.MotherboardPage)
                 mainPage.frame.Navigate(motherboardPage);
         }
     }

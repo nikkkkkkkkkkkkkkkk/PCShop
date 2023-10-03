@@ -30,9 +30,9 @@ namespace PCShop.PagesClasses
         {
             User? user = DB.db.Users.Local.FirstOrDefault(x => x.Login == login.Text && x.Password == password.Text);
             if (user != null)
-            {
+			{
                 MainWindow.frame.Navigate(PagesClass.mainPage);
-                DB.currentUser = user;
+				DB.currentUser = user;
             }
         }
     }

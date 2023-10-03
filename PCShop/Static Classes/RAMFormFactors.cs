@@ -10,5 +10,10 @@ namespace PCShop.Static_Classes
     {
         public const string DIMM = "DIMM";
         public const string SO_DIMM = "SO-DIMM";
-    }
+		public static List<string?> List()
+		{
+			List<string?> formFactors = typeof(RAMFormFactors).GetFields().Select(x => x.GetValue(null)?.ToString()).ToList();
+			return formFactors;
+		}
+	}
 }

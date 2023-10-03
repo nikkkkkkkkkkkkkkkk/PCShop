@@ -37,7 +37,7 @@
                 <TextBlock Text="Количество слотов памяти:" HorizontalAlignment="Left"/>
                 <TextBox x:Name="ramSlots"/>
                 <TextBlock Text="Форм-фактор ОЗУ:" HorizontalAlignment="Left"/>
-                <TextBox x:Name="ramFormFactor"/>
+                <ComboBox x:Name="ramFormFactor"/>
                 <TextBlock Text="Тип поддерживаемой памяти:" HorizontalAlignment="Left"/>
                 <TextBox x:Name="ramType"/>
                 <TextBlock Text="Количество каналов памяти:" HorizontalAlignment="Left"/>

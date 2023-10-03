@@ -13,5 +13,6 @@
             <TextBox x:Name="login" Text="nik" Margin="5"/>
             <TextBox x:Name="password" Text="123" Margin="5"/>
             <Button Click="AuthButton_Click" Height="25" Margin="5" Content="Auth"/>
-        </StackPanel>    </Grid>
+        </StackPanel>    
+    </Grid>
 </Page>

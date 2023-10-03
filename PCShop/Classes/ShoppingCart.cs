@@ -18,12 +18,13 @@ namespace PCShop.Classes
             UserId = DB.currentUser.Id;
             ProductId = productId;
             ProductType = productType;
+            GuidString = Guid.NewGuid().ToString();
         }
         public ShoppingCart()
         {
         }
         public int Id { get; set; }
-        public Guid Guid { get; set; } = Guid.NewGuid();
+        public string GuidString { get; set; }
         public int UserId {  get; set; }
         public int ProductId { get; set; }
         public string ProductType { get; set; }

@@ -1,4 +1,5 @@
-﻿using PCShop.Modules;
+﻿using PCShop.Classes;
+using PCShop.Modules;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,8 +40,8 @@ namespace PCShop.PagesClasses
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             Windows.MotherboardW window = new Windows.MotherboardW();
-            window.Owner = MainWindow.mainWindow;
-            window.ShowDialog();
+			window.Owner = MainWindow.mainWindow;
+			window.ShowDialog();
             LoadElemenets();
         }
     }

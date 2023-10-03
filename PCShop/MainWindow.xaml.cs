@@ -25,19 +25,18 @@ namespace PCShop
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
-        public static Frame? frame;
-        public static MainWindow? mainWindow;
-        public MainWindow()
+	{
+		public static Frame? frame;
+		public static MainWindow? mainWindow;
+		public MainWindow()
         {
             InitializeComponent();
-            mainWindow = this;
-            frame = privateFrame;
+			mainWindow = this;
+			frame = privateFrame;
 
-            DB.Load();
-
-            frame.Navigate(new PagesClasses.AuthPage());
-        }
+			DB.Load();
+			frame.Navigate(new PagesClasses.AuthPage());
+		}
 
         private void SelectImage_Click(object sender, RoutedEventArgs e)
         {
