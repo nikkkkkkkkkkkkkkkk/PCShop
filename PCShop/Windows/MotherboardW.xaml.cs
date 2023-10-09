@@ -33,6 +33,7 @@ namespace PCShop.Windows
             chipset.ItemsSource = Enumerable.Concat(ChipsetsAMD.List(), ChipsetsIntel.List());
             formFactor.ItemsSource = FormFactors.List();
             ramFormFactor.ItemsSource = RAMFormFactors.List();
+            ramType.ItemsSource = RAMTypes.List();
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)

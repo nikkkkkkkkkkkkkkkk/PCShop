@@ -36,8 +36,7 @@ namespace PCShop.Pages
                 motherboards.Children.Add(new UserControls.MotherboardUC(item));
             }
         }
-
-        private void Add_Click(object sender, RoutedEventArgs e)
+		private void Add_Click(object sender, RoutedEventArgs e)
         {
             Windows.MotherboardW window = new Windows.MotherboardW();
 			window.Owner = MainWindow.mainWindow;

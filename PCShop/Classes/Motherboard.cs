@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PCShop.Classes
 {
-    public class Motherboard : IBase, IMotherboard
+    public class Motherboard : IBase
     {
         public Motherboard(string model, string type, int price, byte[]? image, string? formFactor, int height, int width, string socketType, string chipset, string? compatibleProcessorCores, int rAMSlots, string rAMFormFactor, string rAMType, int numberMemoryChannels, int maxMemoryCapacity, int maxFreqMemory, double versionPCIExpresStorage, int numberM2Connectors, int numberSATAConnectors, bool supportNVMe, double versionPCIExpress, int numberPCIEx16Connectors, string numberAndTypeUSB, int numberNetworkPorts, int numberAnalogAudioJack, string internalUSBConnectors, string cPUCoolerPowerConnector, int number4PinForCooler, int number4PinForLCS, int number3PinForCooler, double audioSchema, string chipsetAudioAdapter, double speedNetworkAdapter, string chipsetNetworkAdapter, string builtInWiFiAdapter, string wiFiController, string bluetooth, string mainPowerConnector, string cPUPowerConnector, int numberPowerPhases, string passiveCooling, string activeCooling)
         {

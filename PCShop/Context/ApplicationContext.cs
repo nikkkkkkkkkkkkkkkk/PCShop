@@ -31,7 +31,7 @@ namespace PCShop.Context
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql("server=127.0.0.1; port=3307;user=root;;database=PCShop;",
+            optionsBuilder.UseMySql("server=127.0.0.1; port=3307;user=nik;password=Gfhjkm123987;database=PCShop;",
                 new MySqlServerVersion(new Version(8, 0, 25)));
         }
     }

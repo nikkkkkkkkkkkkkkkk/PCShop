@@ -13,14 +13,14 @@ namespace PCShop.Modules
     public class DB
     {
         public static ApplicationContext db = new();
-        public static User currentUser;
+        public static User? currentUser;
         public static void Load()
         {
             db.Users.Load();
             db.ComputerCases.Load();
             //db.Manufacturers.Load();
             //db.Coolers.Load();
-            db.CPUs.Load();
+            //db.CPUs.Load();
             db.GPUs.Load();
             db.Motherboards.Load();
             //db.NetworkCards.Load();

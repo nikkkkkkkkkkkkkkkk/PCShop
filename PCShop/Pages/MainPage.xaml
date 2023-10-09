@@ -51,7 +51,12 @@
                         <Image Source="/Resources/Profile.png"/>
                     </Button>
                     <Button Style="{DynamicResource CategoryStyle}" Width="65" Margin="0,5,0,5" Click="ShoppingCart_Click">
-                        <Image Source="/Resources/Shopping Cart.png"/>
+                        <Grid>
+                            <Image Source="/Resources/Shopping Cart.png"/>
+                            <Border x:Name="countProductCircle" CornerRadius="50" Width="20" Height="20" Background="#011627" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                                <TextBlock x:Name="count" Text="2" Foreground="#FDFFFC" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                        </Grid>
                     </Button>
                 </StackPanel>
             </Grid>

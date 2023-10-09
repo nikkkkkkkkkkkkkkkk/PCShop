@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PCShop.Windows"
         mc:Ignorable="d"
         Title="Motherboard" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterOwner" MouseLeftButtonDown="Window_MouseLeftButtonDown" Width="300">
     <Grid>
@@ -39,7 +38,7 @@
                 <TextBlock Text="Форм-фактор ОЗУ:" HorizontalAlignment="Left"/>
                 <ComboBox x:Name="ramFormFactor"/>
                 <TextBlock Text="Тип поддерживаемой памяти:" HorizontalAlignment="Left"/>
-                <TextBox x:Name="ramType"/>
+                <ComboBox x:Name="ramType"/>
                 <TextBlock Text="Количество каналов памяти:" HorizontalAlignment="Left"/>
                 <TextBox x:Name="numberMemoryChannels"/>
                 <TextBlock Text="Максимальный объем памяти:" HorizontalAlignment="Left"/>

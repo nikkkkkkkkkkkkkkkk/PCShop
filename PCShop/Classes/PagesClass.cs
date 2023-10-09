@@ -10,9 +10,9 @@ namespace PCShop.Classes
 {
     public class PagesClass
     {
-        public static Pages.MainPage mainPage = new();
-        private static Pages.MotherboardPage motherboardPage = new();
-        private static Pages.ShoppingCartPage shoppingCartPage = new();
+        public static Pages.MainPage mainPage;
+        private static Pages.MotherboardPage motherboardPage;
+        private static Pages.ShoppingCartPage shoppingCartPage;
         public enum AvailablePages
         {
             MainPage,
@@ -22,9 +22,9 @@ namespace PCShop.Classes
         public static void NavigateTo(AvailablePages page)
         {
 			if (page == AvailablePages.MotherboardPage)
-                mainPage.frame.Navigate(motherboardPage);
+                mainPage.frame.Navigate(motherboardPage = new());
 			if (page == AvailablePages.ShoppingCart)
-                mainPage.frame.Navigate(shoppingCartPage);
+                mainPage.frame.Navigate(shoppingCartPage = new());
         }
     }
 }

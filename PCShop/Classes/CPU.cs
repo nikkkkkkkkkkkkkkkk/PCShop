@@ -14,17 +14,16 @@ namespace PCShop.Classes
         public string Model { get; set; }
         public string Type { get; set; }
         public int Price {  get; set; }
-        public int Count {  get; set; }
         public byte[]? Image { get; set; }
-        //public SocketType SocketType { get; set; } = new SocketType();
-        public int ClockFrequency { get; set; }
-        public int BusFrequency { get; set; }
-        public int Multiplier { get; set; }
-        public int BitDepth { get; set; }
-        public int CacheMemory { get; set; }
-        public int Core { get; set; }
-        public int ProcessTechnology { get; set; }
-        public int HeatGeneration { get; set; }
-        //public Manufacturer manufacturer { get; set; } = new Manufacturer();
+        public string SocketType { get; set; }
+        public string ManufacturersСode { get; set; }
+        public int ReleaseYear { get; set; }
+        public string ThermalInterface { get; set; }
+        public int Cores { get; set; }
+        public int Threads { get; set; }
+        public int PerformanceCores { get; set; }
+        public int EnergyEffCores { get; set; }
+        public double L2Cache { get; set; }
+        public double L3Cache { get; set; }
     }
 }

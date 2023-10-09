@@ -37,8 +37,9 @@ namespace PCShop.UserControls
         }
 
         private void BuyButton_Click(object sender, RoutedEventArgs e)
-        {
-            ShoppingCart? localShoppignCart = DB.db.ShoppingCart.FirstOrDefault(x => x.ProductId == motherboard.Id && x.ProductType == ProductTypes.Motherboard && x.UserId == DB.currentUser.Id);
+		{
+            PagesClass.mainPage.count.Text = DB.currentUser.CountProduct++.ToString();
+			ShoppingCart? localShoppignCart = DB.db.ShoppingCart.FirstOrDefault(x => x.ProductId == motherboard.Id && x.ProductType == ProductTypes.Motherboard && x.UserId == DB.currentUser.Id);
             if (localShoppignCart != null)
             {
                 localShoppignCart.Quantity++;

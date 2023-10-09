@@ -8,6 +8,7 @@ using System.Linq;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace PCShop.Classes
 {
@@ -22,5 +23,6 @@ namespace PCShop.Classes
         public string SecondName { get; set; }
         private byte[]? ProfilePicture { get; set; }
         public string Rights { get; set; }
-    }
+        public int CountProduct {get; set; }
+	}
 }

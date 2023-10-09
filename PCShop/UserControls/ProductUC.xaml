@@ -17,10 +17,13 @@
                 
                 <TextBlock x:Name="type" FontSize="14" Text="Материнская плата"/>
             </StackPanel>
-            <StackPanel Margin="5,10,10,0" HorizontalAlignment="Right">
-                <Button Style="{DynamicResource DeleteButtonStyle}" Click="DeleteButton_Click"/>
-                <TextBlock x:Name="price" Text="Цена: 19399 ₽" HorizontalAlignment="Center" Margin="0,10,0,0"/>
-            </StackPanel>
+            <Grid Margin="5,10,10,10" HorizontalAlignment="Right">
+                <Button Style="{DynamicResource DeleteButtonStyle}" Click="DeleteButton_Click" VerticalAlignment="Top"/>
+                <TextBlock x:Name="price" Text="Цена: 19399 ₽" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
+                <Border x:Name="countProductCircle" CornerRadius="50" Width="20" Height="20" Background="#011627" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                    <TextBlock x:Name="count" Text="2" Foreground="#FDFFFC" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Border>
+            </Grid>
         </DockPanel>
     </Grid>
 </UserControl>

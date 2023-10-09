@@ -1,4 +1,4 @@
-﻿using PCShop.Classes;
+﻿    using PCShop.Classes;
 using PCShop.Modules;
 using System.Linq;
 using System.Windows;
@@ -10,10 +10,15 @@ namespace PCShop.Pages
     /// Логика взаимодействия для MainPage.xaml
     /// </summary>
     public partial class MainPage : Page
-    {
-        public MainPage()
+	{
+		public MainPage()
         {
             InitializeComponent();
+			foreach (var item in Products.GetShoppingCart())
+			{
+				DB.currentUser.CountProduct += item.Quantity;
+			}
+			count.Text = DB.currentUser.CountProduct.ToString();
         }
 
         private void Motherboard_Click(object sender, RoutedEventArgs e)
@@ -52,14 +57,8 @@ namespace PCShop.Pages
         }
 
         private void ShoppingCart_Click(object sender, RoutedEventArgs e)
-        {
-            //string guids = "";
-            //foreach (var item in DB.db.ShoppingCart.Local.Where(x => x.UserId == DB.currentUser.Id))
-            //{
-            //    guids += $"{item.Id}. {item.ProductId} - {item.ProductType}. Количество: {item.Quantity} [{item.GuidString}]\n";
-            //}
-            //MessageBox.Show(guids);
-            PagesClass.NavigateTo(PagesClass.AvailablePages.ShoppingCart);
+		{
+			PagesClass.NavigateTo(PagesClass.AvailablePages.ShoppingCart);
         }
-    }
+	}
 }

@@ -30,12 +30,12 @@ namespace PCShop.Modules
         }
         public static List<ShoppingCart> GetShoppingCart()
         {
-            List<ShoppingCart> product = new List<ShoppingCart>();
-            foreach (var item in DB.db.ShoppingCart.Local.Where(x => x.UserId == DB.currentUser.Id))
-            {
-                product.Add(item);
-            }
-            return product;
+			List<ShoppingCart> product = new List<ShoppingCart>();
+			foreach (var item in DB.db.ShoppingCart.Local.Where(x => x.UserId == DB.currentUser.Id))
+			{
+				product.Add(item);
+			}
+			return product;
         }
     }
 }
